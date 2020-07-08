@@ -1,0 +1,14 @@
+.side-bar{
+    background-color: var(--dark);
+    height: 100vh;
+    width: 30vw;
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    bottom: 0; /* Stay at the top */
+    left: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    border-style: solid;
+    border-right-color: var(--yellow);
+    border-width: 0;
+    border-right-width: 10px;
+}
