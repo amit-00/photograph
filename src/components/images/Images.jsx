@@ -8,10 +8,11 @@ import ImageItem from './ImageItem';
 const Images = () => {
     const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(false);
+    const status = 'production';
 
     let unsplashClientId;
 
-    if(process.env.NODE_ENV !== 'production'){
+    if(status !== 'production'){
         unsplashClientId = process.env.GATSBY_PORTFOLIO_ACCESS_KEY;
     }
     else{
