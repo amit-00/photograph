@@ -12,3 +12,20 @@
     border-width: 0;
     border-right-width: 10px;
 }
+
+@media screen and (max-width: 1024px){
+    .side-bar{
+        width: 45vw;
+    }
+}
+
+@media screen and (max-width: 769px){
+    .side-bar{
+        width: 100%;
+        position: relative;
+        z-index: 0;
+        border-right-width: 0;
+        border-bottom-color: var(--yellow);
+        border-bottom-width: 10px;
+    }
+}
