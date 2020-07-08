@@ -9,12 +9,21 @@ const Images = () => {
     const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(false);
 
+    let unsplashClientId;
+
+    if(process.env.NODE_ENV !== 'production'){
+        unsplashClientId = process.env.GATSBY_PORTFOLIO_ACCESS_KEY;
+    }
+    else{
+        unsplashClientId = process.env.PORTFOLIO_ACCESS_KEY;
+    }
+
     useEffect(() => { getImages(); } , []);
 
     const getImages = async () => {
         setLoading(true);
     
-        const res = await axios.get(`https://api.unsplash.com/photos/random?count=20&client_id=${process.env.PORTFOLIO_ACCESS_KEY}`);
+        const res = await axios.get(`https://api.unsplash.com/photos/random?count=20&client_id=${unsplashClientId}`);
     
         console.log(res.data);
         setImages(res.data);
