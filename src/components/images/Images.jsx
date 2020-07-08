@@ -33,7 +33,7 @@ const Images = () => {
                         {images.map((image, index) => index < 10 && <ImageItem key={image.id} img={image.urls.small} />)}
                     </div>
                     <div className="images-area-column">
-                        {images.map((image, index) => (index >= 10 && index < 20) && <ImageItem key={image.id} img={image.urls.small} />)}
+                        {images.map((image, index) => (index >= 10 && index < 20) && <ImageItem key={image.id} img={image.urls.regular} />)}
                     </div>
                 </div>
             </div>
