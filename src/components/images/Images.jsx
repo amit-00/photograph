@@ -8,23 +8,13 @@ import ImageItem from './ImageItem';
 const Images = () => {
     const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(false);
-    const status = 'production';
-
-    let unsplashClientId;
-
-    if(status !== 'production'){
-        unsplashClientId = process.env.GATSBY_PORTFOLIO_ACCESS_KEY;
-    }
-    else{
-        unsplashClientId = process.env.PORTFOLIO_ACCESS_KEY;
-    }
 
     useEffect(() => { getImages(); } , []);
 
     const getImages = async () => {
         setLoading(true);
     
-        const res = await axios.get(`https://api.unsplash.com/photos/random?count=20&client_id=${unsplashClientId}`);
+        const res = await axios.get(`https://api.unsplash.com/photos/random?count=20&client_id=${process.env.GATSBY_PORTFOLIO_ACCESS_KEY}`);
     
         console.log(res.data);
         setImages(res.data);
