@@ -5,7 +5,7 @@ import Loader from '../widgets/Loader';
 import ImageItem from './ImageItem';
 
 
-const Images = () => {
+const Images = ({ key }) => {
     const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -14,7 +14,7 @@ const Images = () => {
     const getImages = async () => {
         setLoading(true);
     
-        const res = await axios.get(`https://api.unsplash.com/photos/random?count=20&client_id=${process.env.GATSBY_PORTFOLIO_ACCESS_KEY}`);
+        const res = await axios.get(`https://api.unsplash.com/photos/random?count=20&client_id=${key}`);
     
         console.log(res.data);
         setImages(res.data);
