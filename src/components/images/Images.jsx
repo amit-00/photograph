@@ -5,9 +5,18 @@ import Loader from '../widgets/Loader';
 import ImageItem from './ImageItem';
 
 
-const Images = ({ key }) => {
+const Images = () => {
     const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(false);
+
+    let key;
+    
+    if(process.env.NODE_ENV !== 'production'){
+        key =process.env.GATSBY_PORTFOLIO_ACCESS_KEY;
+    }
+    else{
+        key = process.env.PORTFOLIO_ACCESS_KEY;
+    }
 
     useEffect(() => { getImages(); } , []);
 

@@ -11,10 +11,10 @@ const Profile = () => {
                         <h1 className="text-light">John Doe</h1>
                         <div className="row">
                             <div className="col">
-                                <p className="text-light"> <i class="fab fa-instagram"></i> Instagram</p>
+                                <p className="text-light"> <i className="fab fa-instagram"></i> Instagram</p>
                             </div>
                             <div className="col">
-                                <p className="text-light"> <i class="far fa-envelope"></i> Email</p>
+                                <p className="text-light"> <i className="far fa-envelope"></i> Email</p>
                             </div>
                         </div>
                     </div>
